@@ -45,6 +45,9 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BeaconLibraryBindings">
+      <HintPath>lib\BeaconLibraryBindings.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,10 +57,31 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Plugin.CurrentActivity">
+      <Version>2.1.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.Permissions">
+      <Version>3.0.0.12</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\beaconwithtransmitter\AltBeaconLibrarySample\AltBeaconLibrarySample.Android\AltBeaconService.cs">
+      <Link>AltBeaconService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\beaconwithtransmitter\AltBeaconLibrarySample\AltBeaconLibrarySample.Android\BeaconSimulator.cs">
+      <Link>BeaconSimulator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\beaconwithtransmitter\AltBeaconLibrarySample\AltBeaconLibrarySample.Android\MainApplication.cs">
+      <Link>MainApplication.cs</Link>
+    </Compile>
+    <Compile Include="..\..\beaconwithtransmitter\AltBeaconLibrarySample\AltBeaconLibrarySample.Android\MonitorNotifier.cs">
+      <Link>MonitorNotifier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\beaconwithtransmitter\AltBeaconLibrarySample\AltBeaconLibrarySample.Android\RangeNotifier.cs">
+      <Link>RangeNotifier.cs</Link>
+    </Compile>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,8 +92,6 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Tabbar.xml" />
-    <AndroidResource Include="Resources\layout\Toolbar.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
@@ -93,6 +115,17 @@
       <Project>{65340F16-F2D7-4924-B1EE-31302E2D7F5A}</Project>
       <Name>xamarin-beacon</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\beaconwithtransmitter\AltBeaconLibrarySample\AltBeaconLibrarySample.Android\Lib\BeaconLibraryBindings.dll">
+      <Link>lib\BeaconLibraryBindings.dll</Link>
+    </Content>
+    <AndroidResource Include="..\..\beaconwithtransmitter\AltBeaconLibrarySample\AltBeaconLibrarySample.Android\Resources\layout\Tabbar.axml">
+      <Link>Resources\layout\Tabbar.axml</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\..\beaconwithtransmitter\AltBeaconLibrarySample\AltBeaconLibrarySample.Android\Resources\layout\Toolbar.axml">
+      <Link>Resources\layout\Toolbar.axml</Link>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
