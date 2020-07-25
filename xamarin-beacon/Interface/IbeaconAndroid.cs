@@ -12,6 +12,7 @@ namespace xamarin.beacon.Interface
         void StopRanging();
         void SetBackgroundMode(bool isBackground);
         void OnDestroy();
+        void BuletoothEnable();
     }
 
 }

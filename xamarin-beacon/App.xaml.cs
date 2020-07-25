@@ -47,6 +47,7 @@ namespace xamarin.beacon
         {
             // Handle when your app starts
             DependencyService.Get<IbeaconAndroid>().SetBackgroundMode(false);
+            DependencyService.Get<IbeaconAndroid>().BuletoothEnable();
 
             startTimer();
         }

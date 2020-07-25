@@ -22,12 +22,12 @@ namespace xamarin.beacon.Page
             buttonStart.SetBinding(Button.TextProperty, new Binding("IsStartedRanging", converter: new IsStartedRangingToTextConverter()));
             Label labelInfo = new Label() { HorizontalOptions = LayoutOptions.Center, Text = "Beacons oredered by RSSI" };
 
-            Button buttonTransmit = new Button { Text = "START TRANSMISSION" };
+            Button buttonTransmit = new Button { Text = "START BEACON" };
             buttonTransmit.SetBinding(Button.CommandProperty, "StartTransmitting");
             buttonTransmit.SetBinding(Button.TextProperty, new Binding("IsTransmitting", converter: new IsTransmittingToTextConverter()));
 
 
-            StackLayout slHeader = new StackLayout() { Children = { buttonStart, labelInfo, buttonTransmit } };
+            StackLayout slHeader = new StackLayout() { Children = { buttonTransmit, buttonStart, labelInfo, } };
 
             ListView lv = new ListView { HasUnevenRows = true, SeparatorColor = Color.Black, SeparatorVisibility = SeparatorVisibility.Default, Header = slHeader };
             lv.SetBinding(ListView.ItemsSourceProperty, "ReceivedBeacons");
@@ -122,8 +122,8 @@ namespace xamarin.beacon.Page
                 if (value != null && value is bool)
                 {
                     if (((bool)value))
-                        return "STOP Scanning Beacons";
-                    return "START Scanning Beacons";
+                        return "STOP SCANNING BEACON";
+                    return "START SCANNING BEACON";
                 }
                 return "";
             }
@@ -143,8 +143,8 @@ namespace xamarin.beacon.Page
                 if (value != null && value is bool)
                 {
                     if (((bool)value))
-                        return "TRANSMISSION ONGOING";
-                    return "START TRANSMISSION";
+                        return "STOP BEACON";
+                    return "START BEACON";
                 }
                 return "";
             }

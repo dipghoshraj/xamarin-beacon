@@ -118,6 +118,7 @@ namespace xamarin.beacon.ViewModel
         private void startRangingBeacon()
         {
             var beaconService = Xamarin.Forms.DependencyService.Get<IbeaconAndroid>();
+            beaconService.BuletoothEnable();
 
             if (!IsStartedRanging)
                 beaconService.StartRanging();
@@ -130,8 +131,10 @@ namespace xamarin.beacon.ViewModel
         private void starttransmitbeacon()
         {
             var beaconService = Xamarin.Forms.DependencyService.Get<IbeaconAndroid>();
+            beaconService.BuletoothEnable();
             beaconService.StartBroadcasting();
 
+            IsTransmitting = !IsTransmitting;
         }
 
         private void updateBeaconCurrentDateTime(List<SharedBeacon> receivedBeacons, DateTime now)
