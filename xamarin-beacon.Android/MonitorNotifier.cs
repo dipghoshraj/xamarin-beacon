@@ -1,7 +1,7 @@
 ﻿using System;
 using Org.Altbeacon.Beacon;
 
-namespace AltBeaconLibrary.Sample.Droid
+namespace xamarin.beacon.Droid
 {
 	public class MonitorEventArgs : EventArgs
 	{
@@ -45,7 +45,7 @@ namespace AltBeaconLibrary.Sample.Droid
 		private void OnExitRegionComplete(Region region)
 		{
 			if (ExitRegionComplete != null)
-				ExitRegionComplete(this, new MonitorEventArgs{ Region = region });
+				ExitRegionComplete(this, new MonitorEventArgs { Region = region });
 		}
 	}
 }

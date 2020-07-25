@@ -2,7 +2,7 @@
 using Org.Altbeacon.Beacon;
 using Org.Altbeacon.Beacon.Simulator;
 
-namespace AltBeaconLibrary.Sample.Droid
+namespace xamarin.beacon.Sample.Droid
 {
 	public class BeaconSimulator : Java.Lang.Object, IBeaconSimulator
 	{
@@ -25,7 +25,7 @@ namespace AltBeaconLibrary.Sample.Droid
 
 		public void CreateBasicSimulatedBeacons()
 		{
-			if(!UseSimulatedBeacons) return;
+			if (!UseSimulatedBeacons) return;
 
 			var beacon1 = new AltBeacon.Builder().SetId1("DF7E1C79-43E9-44FF-886F-1D1F7DA6997A")
 				.SetId2("1").SetId3("1").SetRssi(-55).SetTxPower(-55).Build();
@@ -39,7 +39,7 @@ namespace AltBeaconLibrary.Sample.Droid
 			var beacon4 = new AltBeacon.Builder().SetId1("DF7E1C76-43E9-44FF-886F-1D1F7DA6997A")
 				.SetId2("4").SetId3("4").SetRssi(-55).SetTxPower(-55).Build();
 
-			_beacons.AddRange(new [] { beacon1, beacon2, beacon3, beacon4 });
+			_beacons.AddRange(new[] { beacon1, beacon2, beacon3, beacon4 });
 		}
 	}
 }

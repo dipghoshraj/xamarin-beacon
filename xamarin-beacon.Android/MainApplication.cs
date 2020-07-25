@@ -5,7 +5,7 @@ using Android.App;
 using Android.Runtime;
 using Plugin.CurrentActivity;
 
-namespace AltBeaconLibrarySample.Droid
+namespace xamarin.beacon.Droid
 {
 #if DEBUG
     [Application(Debuggable = true)]

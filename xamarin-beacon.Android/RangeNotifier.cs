@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Org.Altbeacon.Beacon;
 
-namespace AltBeaconLibrary.Sample.Droid
+namespace xamarin.beacon.Droid
 {
 	public class RangeEventArgs : EventArgs
 	{
