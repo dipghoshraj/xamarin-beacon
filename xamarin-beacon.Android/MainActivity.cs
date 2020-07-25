@@ -11,7 +11,7 @@ using xamarin_beacon.Droid;
 
 namespace xamarin.beacon.Droid
 {
-	[Activity(Label = "xamarin.beacon.Droid",
+	[Activity(Label = "Beaconer",
 			  Icon = "@mipmap/icon",
 			  Theme = "@style/MainTheme",
 			  MainLauncher = true,
