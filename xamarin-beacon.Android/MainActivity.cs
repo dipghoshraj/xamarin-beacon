@@ -7,7 +7,7 @@ using Org.Altbeacon.Beacon;
 using Plugin.CurrentActivity;
 using Plugin.Permissions;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform;
+using xamarin_beacon.Droid;
 
 namespace xamarin.beacon.Droid
 {
@@ -21,10 +21,10 @@ namespace xamarin.beacon.Droid
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
-			//TabLayoutResource = xamarin.beacon.Droid.Resource.Layout
-			//ToolbarResource = Resource.Layout.Toolbar;
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
-			base.OnCreate(savedInstanceState);
+            base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState); // add this line to your code, it may also be called: bundle
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
