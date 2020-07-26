@@ -7,7 +7,7 @@ namespace xamarin.beacon.Interface
     public interface iOSScan
     {
         void InitializeScannerService();
-
         void startranging();
+        void stopranging();
     }
 }

@@ -12,8 +12,11 @@ using System.Collections.Generic;
 using Xamarin.Essentials;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using xamarin.beacon.iOS.Services;
 
-namespace xamarin.beacon.iOS
+[assembly: Xamarin.Forms.Dependency(typeof(BleScan))]
+
+namespace xamarin.beacon.iOS.Services
 {
     public class BleScan : iOSScan
     {
@@ -64,6 +67,12 @@ namespace xamarin.beacon.iOS
         public void startranging()
         {
             _locationManager.StartRangingBeacons(_region);
+        }
+
+        public void stopranging()
+        {
+            _locationManager.StopRangingBeacons(_region);
+
         }
 
         void LocationManagerDidRangeBeacons(object sender, CLRegionBeaconsRangedEventArgs e)

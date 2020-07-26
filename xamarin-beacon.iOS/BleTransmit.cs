@@ -5,8 +5,12 @@ using CoreLocation;
 using Foundation;
 using UIKit;
 using xamarin.beacon.Interface;
+using xamarin.beacon.iOS.Services;
 
-namespace xamarin.beacon.iOS
+
+[assembly: Xamarin.Forms.Dependency(typeof(Blebroadcast))]
+
+namespace xamarin.beacon.iOS.Services
 {
 	class PeripheralManagerDelegate : CBPeripheralManagerDelegate
 	{

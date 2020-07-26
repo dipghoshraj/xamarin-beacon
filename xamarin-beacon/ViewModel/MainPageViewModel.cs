@@ -117,24 +117,46 @@ namespace xamarin.beacon.ViewModel
 
         private void startRangingBeacon()
         {
-            var beaconService = Xamarin.Forms.DependencyService.Get<IbeaconAndroid>();
-            beaconService.BuletoothEnable();
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                var beaconService = Xamarin.Forms.DependencyService.Get<IbeaconAndroid>();
+                beaconService.BuletoothEnable();
 
-            if (!IsStartedRanging)
-                beaconService.StartRanging();
-            else
-                beaconService.StopRanging();
+                if (!IsStartedRanging)
+                    beaconService.StartRanging();
+                else
+                    beaconService.StopRanging();
 
-            IsStartedRanging = !IsStartedRanging;
+                IsStartedRanging = !IsStartedRanging;
+            } 
+
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                if (!IsStartedRanging)
+                    Xamarin.Forms.DependencyService.Get<iOSScan>().startranging();
+                else
+                    Xamarin.Forms.DependencyService.Get<iOSScan>().stopranging();
+
+                IsStartedRanging = !IsStartedRanging;
+            }
         }
 
         private void starttransmitbeacon()
         {
-            var beaconService = Xamarin.Forms.DependencyService.Get<IbeaconAndroid>();
-            beaconService.BuletoothEnable();
-            beaconService.StartBroadcasting();
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                var beaconService = Xamarin.Forms.DependencyService.Get<IbeaconAndroid>();
+                beaconService.BuletoothEnable();
+                beaconService.StartBroadcasting();
 
-            IsTransmitting = !IsTransmitting;
+                IsTransmitting = !IsTransmitting;
+            }
+
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                Xamarin.Forms.DependencyService.Get<iOSTransmit>().StartBroadcasting("1234");
+                IsTransmitting = !IsTransmitting;
+            }
         }
 
         private void updateBeaconCurrentDateTime(List<SharedBeacon> receivedBeacons, DateTime now)
