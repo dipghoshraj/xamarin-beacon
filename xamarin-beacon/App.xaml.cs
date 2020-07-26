@@ -56,8 +56,8 @@ namespace xamarin.beacon
         protected override void OnStart()
         {
             // Handle when your app starts
-            DependencyService.Get<IbeaconAndroid>().SetBackgroundMode(false);
-            DependencyService.Get<IbeaconAndroid>().BuletoothEnable();
+            //DependencyService.Get<IbeaconAndroid>().SetBackgroundMode(false);
+            //DependencyService.Get<IbeaconAndroid>().BuletoothEnable();
 
             startTimer();
         }
@@ -65,14 +65,14 @@ namespace xamarin.beacon
         protected override void OnSleep()
         {
             // Handle when your app sleeps
-            DependencyService.Get<IbeaconAndroid>().SetBackgroundMode(true);
+            //DependencyService.Get<IbeaconAndroid>().SetBackgroundMode(true);
             closeTimer();
         }
 
         protected override void OnResume()
         {
             // Handle when your app resumes
-            DependencyService.Get<IbeaconAndroid>().SetBackgroundMode(false);
+            //DependencyService.Get<IbeaconAndroid>().SetBackgroundMode(false);
             startTimer();
         }
 
