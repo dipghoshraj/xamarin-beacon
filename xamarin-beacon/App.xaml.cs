@@ -15,7 +15,17 @@ namespace xamarin.beacon
         {
             InitializeComponent();
 
-            DependencyService.Get<IbeaconAndroid>().InitializeService();
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                DependencyService.Get<IbeaconAndroid>().InitializeService();
+            }
+
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                DependencyService.Get<iOSTransmit>().InitializeService();
+                DependencyService.Get<iOSScan>().InitializeScannerService();
+            }
+
 
             MainPage = new MainPage();
 
