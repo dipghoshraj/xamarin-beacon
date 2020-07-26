@@ -8,6 +8,6 @@ namespace xamarin.beacon.Interface
     {
         void InitializeService();
 
-        void StartBroadcasting(string id1);
+        void StartBroadcasting();
     }
 }

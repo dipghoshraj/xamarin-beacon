@@ -154,7 +154,7 @@ namespace xamarin.beacon.ViewModel
 
             if (Device.RuntimePlatform == Device.iOS)
             {
-                Xamarin.Forms.DependencyService.Get<iOSTransmit>().StartBroadcasting("1234");
+                Xamarin.Forms.DependencyService.Get<iOSTransmit>().StartBroadcasting();
                 IsTransmitting = !IsTransmitting;
             }
         }

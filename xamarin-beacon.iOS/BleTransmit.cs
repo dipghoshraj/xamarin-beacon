@@ -58,9 +58,9 @@ namespace xamarin.beacon.iOS.Services
 
 		}
 
-		public void StartBroadcasting(string id1)
+		public void StartBroadcasting()
 		{
-			CLBeaconRegion region = Helpers.CreateRegion(new NSUuid(id1), new NSNumber(5050), new NSNumber(1234));
+			CLBeaconRegion region = Helpers.CreateRegion(new NSUuid("8E6DBFBB-489D-418A-9560-1BA1CE6301AA"), new NSNumber(5050), new NSNumber(1234));
 
 			if (region != null)
 			{
