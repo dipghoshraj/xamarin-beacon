@@ -63,6 +63,10 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BleScan.cs" />
+    <Compile Include="BleTransmit.cs" />
+    <Compile Include="Defaults.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
