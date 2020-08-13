@@ -32,11 +32,31 @@ Want to make your changes, Great!
 - Beacon function for ios .iOS Blescan.cs --> scanner and BleTransmit.cs --> broadcast
 - All configuration for the iBeacon function initilized on application class
 
+### add this on info.plist
+
+``` bash
+<key>UIBackgroundModes</key>
+<array>
+    <!--for connecting to devices (client)-->
+    <string>bluetooth-central</string>
+
+    <!--for server configurations if needed-->
+    <string>bluetooth-peripheral</string>
+</array>
+
+<!--Description of the Bluetooth request message (required on iOS 10, deprecated)-->
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>YOUR CUSTOM MESSAGE</string>
+
+<!--Description of the Bluetooth request message (required on iOS 13)-->
+<key>NSBluetoothAlwaysUsageDescription</key>
+<string>YOUR CUSTOM MESSAGE</string>
+```
+
 
 ### Todos
 
  - Now not all beacon are scannning on the ios device, working on the libery to scann every beacon
- - Over ios 13 iBeacon broadcast is causing app to crash due to permisson issue need to fixed this
 
 License
 ----
