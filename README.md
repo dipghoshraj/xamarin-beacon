@@ -32,7 +32,7 @@ Want to make your changes, Great!
 - Beacon function for ios .iOS Blescan.cs --> scanner and BleTransmit.cs --> broadcast
 - All configuration for the iBeacon function initilized on application class
 
-### add this on info.plist
+### For ios add this on info.plist
 
 ``` bash
 <key>UIBackgroundModes</key>
