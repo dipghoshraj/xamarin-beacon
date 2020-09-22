@@ -56,7 +56,7 @@ Want to make your changes, Great!
 
 ### Todos
 
- - Now not all beacon are scannning on the ios device, working on the libery to scann every beacon
+ - Need to fix the codeQL work-flow
 
 License
 ----
